@@ -1,11 +1,13 @@
-package com.example.sampleapp.model;
+package com.example.moviesapp.model;
 
-import com.example.sampleapp.util.ServiceHelper;
+import com.example.moviesapp.util.ServiceHelper;
+
 import io.reactivex.Observable;
-import io.reactivex.Scheduler;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.schedulers.Schedulers;
-import static com.example.sampleapp.util.AppConstant.DEVELOPER_KEY;
+
+import static com.example.moviesapp.util.AppConstant.DEVELOPER_KEY;
+
 
 public class MovieListModelImpl implements IMovieListModel{
 

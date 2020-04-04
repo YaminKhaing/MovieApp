@@ -1,4 +1,4 @@
-package com.example.sampleapp.adapters;
+package com.example.moviesapp.adapters;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -11,17 +11,18 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
-import com.example.sampleapp.R;
-import com.example.sampleapp.common.BaseAdapter;
-import com.example.sampleapp.model.MovieInfoModel;
-import com.example.sampleapp.model.MovieListModel;
+import com.example.moviesapp.R;
+import com.example.moviesapp.common.BaseAdapter;
+import com.example.moviesapp.model.MovieInfoModel;
+
 
 import java.util.ArrayList;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-import static com.example.sampleapp.util.AppConstant.BASE_IMG_URL;
+import static com.example.moviesapp.util.AppConstant.BASE_IMG_URL;
+
 
 public class MovieInfoAdapter extends BaseAdapter {
 

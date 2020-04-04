@@ -1,3 +1,23 @@
 <resources>
     <string name="app_name">MoviesApp</string>
+
+    <string name="home">Home</string>
+    <string name="search">Search</string>
+    <string name="profile">Profile</string>
+
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+    <string name="login">Login</string>
+
+    <string name="error">Error</string>
+    <string name="please_fill_in_username">Please Fill in Username</string>
+    <string name="please_fill_in_password">Please Fill in Password</string>
+    <string name="error_retrieving_data">Error Retrieving Data</string>
+    <string name="please_check_your_internet_connection">Please Check Your Internet Connection</string>
+    <string name="error_connecting">Connection Error</string>
+    <string name="incorrect_username_or_password">Incorrect Username or Password</string>
+    <string name="ok">OK</string>
+
+    <string name="category_name">Category Name</string>
+
 </resources>

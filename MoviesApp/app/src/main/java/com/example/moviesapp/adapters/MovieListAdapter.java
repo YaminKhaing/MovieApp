@@ -1,4 +1,4 @@
-package com.example.sampleapp.adapters;
+package com.example.moviesapp.adapters;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -9,10 +9,10 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.sampleapp.R;
-import com.example.sampleapp.common.BaseAdapter;
-import com.example.sampleapp.model.MovieInfoModel;
-import com.example.sampleapp.model.MovieListModel;
+import com.example.moviesapp.R;
+import com.example.moviesapp.common.BaseAdapter;
+import com.example.moviesapp.model.MovieInfoModel;
+import com.example.moviesapp.model.MovieListModel;
 
 import java.util.ArrayList;
 

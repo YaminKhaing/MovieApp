@@ -4,6 +4,10 @@
     <color name="colorPrimaryDark">#3700B3</color>
     <color name="colorAccent">#03DAC5</color>
     
-    <style name="color_white">#ffffff</style>
-    <style name="color_black">#000000</style>
+    <color name="color_white">#ffffff</color>
+    <color name="color_black">#000000</color>
+
+    <color name="color_home">#53DADF</color>
+    <color name="color_search">#20AABB</color>
+    <color name="color_profile">#343BBA</color>
 </resources>
