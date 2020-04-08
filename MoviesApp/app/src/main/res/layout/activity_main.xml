@@ -23,6 +23,7 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:id="@+id/relativeLayout"
         app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
         <TextView
@@ -30,18 +31,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="16sp"
-            android:text="Text"
             android:layout_centerHorizontal="true"/>
-
-<!--        <GridView-->
-<!--            android:id="@+id/gridview_id"-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:padding="5dp"-->
-<!--            android:numColumns="auto_fit"-->
-<!--            android:layout_marginTop="10dp"-->
-<!--            android:layout_marginBottom="10dp"-->
-<!--            android:layout_below="@+id/text_id"/>-->
 
         <androidx.recyclerview.widget.RecyclerView
             android:layout_width="match_parent"

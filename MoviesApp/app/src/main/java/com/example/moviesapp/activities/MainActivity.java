@@ -12,19 +12,12 @@ import android.widget.TextView;
 import com.aurelhubert.ahbottomnavigation.AHBottomNavigation;
 import com.aurelhubert.ahbottomnavigation.AHBottomNavigationItem;
 import com.example.moviesapp.R;
+import com.example.moviesapp.fragments.SearchFragment;
 
 import butterknife.BindView;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements AHBottomNavigation.OnTabSelectedListener {
 
-    //    @BindView(R.id.ah_bottom_navigation)
-//    AHBottomNavigation ahBottomNavigation;
-//
-//    @BindView(R.id.recycler_view_id)
-//    RecyclerView recyclerView;
-//
-//    @BindView(R.id.text_id)
-//    TextView textView;
     AHBottomNavigation ahBottomNavigation;
     TextView textView;
     RecyclerView recyclerView;
@@ -37,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
 
         this.initializeView();
         this.createNavigationItems();
-
+        ahBottomNavigation.setOnTabSelectedListener(this);
     }
     public static Intent getMainActivityIntent(Context context){
         Intent intent = new Intent(context, MainActivity.class);
@@ -82,28 +75,20 @@ public class MainActivity extends AppCompatActivity {
 
 // Set current item programmatically
         ahBottomNavigation.setCurrentItem(0);
-//        bindData();
 
-        ahBottomNavigation.setOnTabSelectedListener(new AHBottomNavigation.OnTabSelectedListener() {
-            @Override
-            public boolean onTabSelected(int position, boolean wasSelected) {
-//                cosmicCategory=position;
-//                bindData();
-                switch (position){
-                    case 0:
-                        textView.setText("Home");
-                        break;
-                    case 1:
-                        textView.setText("Search");
-                        break;
-                    case 2:
-                        textView.setText("Profile");
-                        break;
-                    default:
-                        break;
-                }
-                return true;
+    }
+
+    @Override
+    public boolean onTabSelected(int position, boolean wasSelected) {
+            if(position==0){
+                textView.setText("Home");
+            } else if(position==1){
+                SearchFragment searchFragment=new SearchFragment();
+                getSupportFragmentManager().beginTransaction().replace(R.id.relativeLayout,searchFragment).commit();
+
+            } else if(position==2){
+                textView.setText("Profile");
             }
-        });
+        return false;
     }
 }

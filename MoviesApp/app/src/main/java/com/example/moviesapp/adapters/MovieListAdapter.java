@@ -7,10 +7,11 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+
 import com.example.moviesapp.R;
-import com.example.moviesapp.common.BaseAdapter;
 import com.example.moviesapp.model.MovieInfoModel;
 import com.example.moviesapp.model.MovieListModel;
 
@@ -19,7 +20,7 @@ import java.util.ArrayList;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class MovieListAdapter extends BaseAdapter {
+public class MovieListAdapter extends RecyclerView.Adapter<MovieListAdapter.MovieListViewHolder> {
 
     private Context context;
     ArrayList<MovieListModel> movieListModelArrayList;
@@ -29,34 +30,24 @@ public class MovieListAdapter extends BaseAdapter {
         this.movieListModelArrayList=arrayList;
     }
 
+    @NonNull
     @Override
-    protected RecyclerView.ViewHolder onCreateCustomViewHolder(ViewGroup parent, int viewType) {
-
+    public MovieListViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.movie_list_view,parent,false);
         return new MovieListViewHolder(view);
     }
 
     @Override
-    protected void onBindCustomViewHolder(RecyclerView.ViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull MovieListViewHolder holder, int position) {
         final MovieListModel movieListModel=movieListModelArrayList.get(position);
         ArrayList<MovieInfoModel> movieInfoModels=movieListModel.getResults();
 
         MovieInfoAdapter movieInfoAdapter=new MovieInfoAdapter(context,movieInfoModels);
 
-//         holder.recyclerView.setHasFixedSize(true);
-//        holder.recyclerView.setLayoutManager(new LinearLayoutManager(context,LinearLayoutManager.HORIZONTAL,false));
-//
-//        holder.recyclerView.setAdapter(horizontalrecyclerAdapter);
+         holder.movieInfoRecyclerView.setHasFixedSize(true);
+        holder.movieInfoRecyclerView.setLayoutManager(new LinearLayoutManager(context,LinearLayoutManager.HORIZONTAL,false));
 
-    }
-
-    @Override
-    protected RecyclerView.ViewHolder onCreateCustomHeaderViewHolder(ViewGroup parent, int viewType) {
-        return null;
-    }
-
-    @Override
-    protected void onBindCustomHeaderViewHolder(RecyclerView.ViewHolder holder, int position) {
+        holder.movieInfoRecyclerView.setAdapter(movieInfoAdapter);
 
     }
 
@@ -64,7 +55,6 @@ public class MovieListAdapter extends BaseAdapter {
     public int getItemCount() {
         return movieListModelArrayList.size();
     }
-
 
     class MovieListViewHolder extends RecyclerView.ViewHolder{
 
@@ -84,4 +74,5 @@ public class MovieListAdapter extends BaseAdapter {
             ButterKnife.bind(this,itemView);
         }
     }
+
 }
